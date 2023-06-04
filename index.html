@@ -3,11 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="icons/icon_shortcut.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/normalize.min.css">
-    <title>Tento webový projekt</title>
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layers.css">
+    <title>Úvod</title>
 </head>
 <body>
-    <h1>My Web Page</h1>    
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="navbar__items navbar__items--bottom"> 
+                <h1><a class="navbar__logo" href="index.html"><span class="h1-seo">Natálie Ryšavá Photography</span></a></h1>       
+                    <div class="navbar__hamburger">
+                        <a class="hamburger-menu" href="javascript:void(0)">
+                            <span class="hamburger-menu__line"></span>
+                            <span class="hamburger-menu__line"></span>
+                            <span class="hamburger-menu__line"></span>
+                        </a>
+                    </div>
+                <menu class="navbar__menu hamburger-menu-list navbar__menu--hidden">
+                    <li class="navbar__menu-item">
+                        <a class="navbar__menu-link navbar__menu-link--light" href="index.html">Úvod</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a class="navbar__menu-link navbar__menu-link--light" href="funkce.html">O mně</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a class="navbar__menu-link navbar__menu-link--light " href="#">Portfolio</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a class="navbar__menu-link navbar__menu-link--light" href="#">Ceník</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a class="navbar__menu-link navbar__menu-link--light" href="kontakt.html">Kurzy</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a class="navbar__menu-link navbar__menu-link--light" href="kontakt.html">Presety</a>
+                    </li>
+                    <li class="navbar__menu-item">
+                        <a class="navbar__menu-link navbar__menu-link--light" href="kontakt.html">Kontakt</a>
+                    </li>
+                </menu>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="section section--full-width">
+            <a href="#"><img class="picture" src="img/img_main-1.jpg" alt="Portrét"></a>
+            <div class="quote-box">
+                <p class="quote-box__text">Fotografie je obrazem zachycený okamžik, tedy moment, který se už nikdy nemůže opakovat.</p>
+                <div class="button-box">
+                    <a class="button-box__text" href="#">Pojďme se domluvit</a>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <h2 class="section__heading">Začínáš s&nbsp;fotografií a&nbsp;nevíš si rady? </h2>
+            <div>
+                <ul class="items-list">
+                    <li class="items-list__text">Najdi svůj jedinečný styl</li>
+                    <li class="items-list__text">Nauč se snadno a&nbsp;rychle ovládat fotoaparát</li>
+                    <li class="items-list__text">Nauč se zachytit jedinečné emoce</li>
+                    <li class="items-list__text">Odhal své chyby a&nbsp;nedokonalosti</li>
+                    <li class="items-list__text">zlepši své schopnosti v oblasti kompozice a&nbsp;světla</li>
+                </ul>
+                <p class="text text--ellipsis">Přichází čas, abys investoval do sebe a&nbsp;své fotografické kariéry. Zapomeň na nekvalitní snímky a&nbsp;zaměř se na vytvoření autentických fotografií bez přemrštěného zpracování a&nbsp;úprav. Zasloužíš si nabízet fotografie, které budou obdivovány a&nbsp;budou reflektovat tvé schopnosti a&nbsp;zkušenosti. Proto neváhej a&nbsp;připoj se k&nbsp;mému fotokurzu, kde se naučíš zachytit krásu momentu a&nbsp;použít světlo jako opravdový profesionál.</p>
+                <div class="button-box">
+                    <a class="button-box__text" href="#">Zjisti více</a>
+                </div>
+            </div>
+            <div class="picture-box">
+                <img class="picture-box__picture picture picture--rounded" src="img/img_course.jpg" alt="Fotografie z kurzu - dívka s fotoaparátem">
+                <div class="picture-box__background"></div>
+            </div>
+        </section>
+        <section class="section">
+            <h2></h2>
+        </section>
+        <section class="section">
+            <h2></h2>
+        </section>
+    </main>
+    <footer class="footer">
+
+    </footer>
+    <script src="JS/hamburger.js"></script>
 </body>
 </html>
