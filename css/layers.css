@@ -43,7 +43,7 @@
 }
 
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 920px) {
     .navbar__logo{
         background-image: url(../logos/logo_reduced.svg);
         background-repeat: no-repeat;
@@ -58,3 +58,12 @@
         background-image: url(../logos/logo_reduced-hover.svg);
     }
 }
+
+@media screen and (min-width: 768px) {
+    .navbar__menu--hidden {
+        opacity: 1;
+        pointer-events: auto;
+        user-select: auto;
+    }
+}
+
