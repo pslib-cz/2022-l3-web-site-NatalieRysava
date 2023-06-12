@@ -23,7 +23,6 @@
     color: var(--color-prim-black);
     text-transform: uppercase;
     padding: 1rem;
-    font-size: calc(0.8 * var(--font-size-text-6));
 }
 
 .navbar__menu-link:hover {
@@ -64,6 +63,19 @@
         opacity: 1;
         pointer-events: auto;
         user-select: auto;
+    }
+}
+
+@media screen and (min-width: 580px) {
+    .icon-container {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .footer-box__text {
+        margin-inline: -1rem;
     }
 }
 
