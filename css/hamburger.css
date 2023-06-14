@@ -63,6 +63,7 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
+    gap: 4rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -80,6 +81,7 @@
         padding: 0;
         flex-direction: row;
         height: auto;
+        gap: 0;
     }
 }
 
@@ -103,6 +105,10 @@
         bottom: 8px;
         transform: rotate(-45deg);
         transition: bottom .5s, transform .25s .25s;
+    }
+
+    .open-menu {
+        overflow: hidden; /* Zákáz scrollování */
     }
 }
 

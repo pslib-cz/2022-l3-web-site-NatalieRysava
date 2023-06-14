@@ -4,10 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icons/icon_shortcut.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/hamburger.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/layers.css">
+    <link rel="stylesheet" href="css/page.css">
+    <script src="JS/slider.js"></script>
+    <script type="module">
+      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+    
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        keyboard: {
+          enabled: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true,
+          bulletElement: "a",
+          bulletClass: "swiper-pagination-bullet dot"
+        }, 
+      });
+      document.querySelector("#next-slide").onclick = () => swiper.slideNext();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          let slideIndex = 0;
+          showSlides();
+    
+          function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+              slideIndex = 1;
+            }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000); // Změna snímku každé 2 sekundy
+          }
+        });
+      </script>
     <title>Úvod</title>
 </head>
 <body>
@@ -50,7 +90,14 @@
     </header>
     <main class="main">
         <section class="section section--beige-medium section--full-width">
-            <a href="#"></a><img class="picture" src="img/img_main-1.jpg" alt="Portrét"></a>
+            <div class="slideshow-container">
+                    <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-plesy.png" alt="První úvodní fotografie - fotografie skupinky přátel tancujících na plesu">
+                    <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-portrety.jpg" alt="Druhá úvodní fotografie - portrét ženy">
+                    <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-svatby.jpg" alt="Třetí úvodní fotografie - svatební portrét muže a ženy">
+                    <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-zvirata.jpg" alt="Čtvrtá úvodní fotografie - tři zrzavá koťata">
+                    <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-produkty.jpg" alt="Pátá úvodní fotografie - korunka Česká Miss Essens 2022">
+                    <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-pary.jpg" alt="Šestá úvodní fotografie - portrét páru muže a ženy">
+            </div>
             <div class="quote-box">
                 <p class="quote-box__text">Fotografie je obrazem zachycený okamžik, tedy moment, který se už nikdy nemůže opakovat.</p>
                 <div class="button-box">
@@ -81,13 +128,65 @@
         <section class="section section--beige-dark">
             <h2 class="section__heading heading heading--hidden">Portfolio</h2>
             <div class="picture-container">
-                <a href="#"><img class="picture-container__picture picture" src="img/img_plesy.jpg" alt=""></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_portrety.jpg" alt=""></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_svatby.jpg" alt=""></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_zvirata.jpg" alt=""></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_produkty.jpg" alt=""></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_pary.jpg" alt=""></a>
+                <a href="#"><img class="picture-container__picture picture" src="img/img_plesy.jpg" alt="Plesová fotografie - skupinka tancujících přítel"></a>
+                <a href="#"><img class="picture-container__picture picture" src="img/img_portrety.jpg" alt="Portrétní fotografie - dívka"></a>
+                <a href="#"><img class="picture-container__picture picture" src="img/img_svatby.jpg" alt="Svatebí fotografie - muž a žena"></a>
+                <a href="#"><img class="picture-container__picture picture" src="img/img_zvirata.jpg" alt="Zvířecí fotografie - kráva"></a>
+                <a href="#"><img class="picture-container__picture picture" src="img/img_produkty.jpg" alt="Produktová fotografie - trofej AniFilm 2023"></a>
+                <a href="#"><img class="picture-container__picture picture" src="img/img_pary.jpg" alt="Párová fotografie - chlapec a dívka sedící na lavičce"></a>
             </div>
+            <div class="slider">
+                <!-- slider content -->
+                <div class="swiper">
+                  <div class="slider__content swiper-wrapper">
+                    <div class="slider__item swiper-slide">
+                      <div class="slider-view">
+                        <div class="slider-view__picture">
+                          <img src="img/img_plesy.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider-view">
+                        <div class="slider-view__picture">
+                          <img src="img/img_portrety.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider-view">
+                        <div class="slider-view__picture">
+                          <img src="img/img_svatby.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider-view">
+                        <div class="slider-view__picture">
+                          <img src="img/img_zvirata.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider-view">
+                        <div class="slider-view__picture">
+                          <img src="img/img_produkty.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="slider-view">
+                        <div class="slider-view__picture">
+                          <img src="img/img_pary.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div> <!-- puntíky -->
+                  <div class="swiper-button-prev"></div> <!-- šipka vlevo -->
+                  <div class="swiper-button-next"></div> <!-- šipka vpravo -->
+                </div>
+              </div>
         </section>
         <section class="section">
             <h2 class="section__heading section__heading--without-gap heading">Ahoj, já jsem Natálie!</h2>
@@ -106,9 +205,9 @@
         <section class="section section--brown-medium">
             <h2 class="section__heading heading heading--white">Presety</h2>
             <div class="preset-box">
-                <a href="#"><img class="preset-box__picture picture" src="./img/img_preset-soft-glow.jpg" alt="Prezentační náhled sady přesetů Soft Glow"></a>
-                <a href="#"><img class="preset-box__picture picture" src="./img/img_preset-mono-b&w.jpg" alt="Prezentační náhled sady přesetů Mono B&W"></a>
-                <a href="#"><img class="preset-box__picture picture" src="./img/img_preset-moody-tones.jpg" alt="Prezentační náhled sady přesetů Moody Tones"></a>
+                <a href="#"><img class="preset-box__picture picture preset-box__picture--soft-glow" src="./img/img_preset-soft-glow.jpg" alt="Prezentační náhled sady přesetů Soft Glow"></a>
+                <a href="#"><img class="preset-box__picture picture preset-box__picture--mono-bw" src="./img/img_preset-mono-bw.jpg" alt="Prezentační náhled sady přesetů Mono B&W"></a>
+                <a href="#"><img class="preset-box__picture picture preset-box__picture--moody-tones" src="./img/img_preset-moody-tones.jpg" alt="Prezentační náhled sady přesetů Moody Tones"></a>
             </div>
             <div class="button-box button-box--white">
                 <a class="button-box__text button-box__text--white" href="#">Prozkoumej více</a>

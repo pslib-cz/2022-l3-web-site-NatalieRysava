@@ -15,46 +15,44 @@
 
 .navbar__menu-item {
     list-style: none;
+    position: relative;
 }
 
-
-
 .navbar__menu-link {
-    color: var(--color-prim-black);
+    color: var(--color-general-black);
     text-transform: uppercase;
     padding: 1rem;
+}
+
+.navbar__logo{
+    background-image: url(../logos/logo_reduced.svg);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    width: 80px;
+    height: 62.68px;
+    display: inline-block;
+    transition: 1s;
+}
+
+.navbar__logo:hover {
+    background-image: url(../logos/logo_reduced-hover.svg);
 }
 
 .navbar__menu-link:hover {
     font-weight: var(--font-weight-bold);
 }
 
-.navbar__logo{
-    background-image: url(../logos/logo_main.svg);
-    background-repeat: no-repeat;
-    background-origin: content-box;
-    width: 360px;
-    height: 116.48px;
-}
-
-.navbar__logo:hover {
-    background-image: url(../logos/logo_main-hover.svg);
-}
-
-
-@media screen and (max-width: 920px) {
+@media screen and (min-width: 1100px) {  
     .navbar__logo{
-        background-image: url(../logos/logo_reduced.svg);
+        background-image: url(../logos/logo_main.svg);
         background-repeat: no-repeat;
         background-origin: content-box;
-        width: 80px;
-        height: 62.68px;
-        display: inline-block;
-        transition: 1s;
+        width: 360px;
+        height: 116.48px;
     }
     
     .navbar__logo:hover {
-        background-image: url(../logos/logo_reduced-hover.svg);
+        background-image: url(../logos/logo_main-hover.svg);
     }
 }
 
@@ -63,6 +61,29 @@
         opacity: 1;
         pointer-events: auto;
         user-select: auto;
+    }
+
+    .navbar__menu-link--light:hover {
+        font-weight: var(--font-weight-light);
+
+    }
+
+    .navbar__menu-link:hover::before {
+        width: calc(100% - 2rem);
+        transition: width 0.5s ease;
+    }
+
+    .navbar__menu-link::before {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 4px;
+        left: 1rem;
+        bottom: -.5rem;
+        background-image: url(../icons/icon_menu-border.svg);
+        background-repeat-x: repeat;
+        z-index: 10;
+        transition: width 0.5s ease;
     }
 }
 
