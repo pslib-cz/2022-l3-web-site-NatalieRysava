@@ -5,34 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icons/icon_shortcut.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/page.css">
-    <script src="JS/slider.js"></script>
-    <script type="module">
-      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
-    
-      const swiper = new Swiper(".swiper", {
-        loop: true,
-        keyboard: {
-          enabled: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
-          clickable: true,
-          bulletElement: "a",
-          bulletClass: "swiper-pagination-bullet dot"
-        }, 
-      });
-      document.querySelector("#next-slide").onclick = () => swiper.slideNext();
-    </script>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layers.css">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
           let slideIndex = 0;
           showSlides();
-    
           function showSlides() {
             let i;
             let slides = document.getElementsByClassName("mySlides");
@@ -44,8 +25,47 @@
               slideIndex = 1;
             }
             slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 2000); // Změna snímku každé 2 sekundy
+            setTimeout(showSlides, 5000);
           }
+        });
+      </script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+          var swiper1 = new Swiper('.swiper-container1', {
+            autoplay: {
+              delay: 10000,
+              disableOnInteraction: true,
+            },
+            speed: 500,
+            loop: false,
+            slidesPerView: 2,
+            centeredSlides: true,
+            spaceBetween: 32,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            },
+          });
+          var swiper1 = new Swiper('.swiper-container2', {
+            speed: 500,
+            loop: false,
+            slidesPerView: 1,
+            centeredSlides: false,
+            spaceBetween: 32,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            },
+          });
         });
       </script>
     <title>Úvod</title>
@@ -125,68 +145,37 @@
                 <div class="picture-box__background"></div>
             </div>
         </section>
-        <section class="section section--beige-dark">
+        <section class="section section--beige-dark section--full-width">
             <h2 class="section__heading heading heading--hidden">Portfolio</h2>
-            <div class="picture-container">
-                <a href="#"><img class="picture-container__picture picture" src="img/img_plesy.jpg" alt="Plesová fotografie - skupinka tancujících přítel"></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_portrety.jpg" alt="Portrétní fotografie - dívka"></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_svatby.jpg" alt="Svatebí fotografie - muž a žena"></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_zvirata.jpg" alt="Zvířecí fotografie - kráva"></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_produkty.jpg" alt="Produktová fotografie - trofej AniFilm 2023"></a>
-                <a href="#"><img class="picture-container__picture picture" src="img/img_pary.jpg" alt="Párová fotografie - chlapec a dívka sedící na lavičce"></a>
-            </div>
-            <div class="slider">
-                <!-- slider content -->
-                <div class="swiper">
-                  <div class="slider__content swiper-wrapper">
-                    <div class="slider__item swiper-slide">
-                      <div class="slider-view">
-                        <div class="slider-view__picture">
-                          <img src="img/img_plesy.jpg" alt="">
+            <div class="wrapper">
+                <div class="container container--aspect-ratio">
+                  <div class="inner">
+                    <div class="swiper-container swiper-container1">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#"><img class="picture" src="img/img_plesy.jpg" alt="Plesová fotografie - skupinka tancujících přítel"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img class="picture" src="img/img_portrety.jpg" alt="Portrétní fotografie - dívka"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img class="picture" src="img/img_svatby.jpg" alt="Svatebí fotografie - muž a žena"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img class="picture" src="img/img_zvirata.jpg" alt="Zvířecí fotografie - kráva"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img class="picture" src="img/img_produkty.jpg" alt="Produktová fotografie - trofej AniFilm 2023"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img class="picture" src="img/img_pary.jpg" alt="Párová fotografie - chlapec a dívka sedící na lavičce"></a>
                         </div>
                       </div>
-                    </div>
-                    <div class="slider__item swiper-slide">
-                      <div class="slider-view">
-                        <div class="slider-view__picture">
-                          <img src="img/img_portrety.jpg" alt="">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slider__item swiper-slide">
-                      <div class="slider-view">
-                        <div class="slider-view__picture">
-                          <img src="img/img_svatby.jpg" alt="">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slider__item swiper-slide">
-                      <div class="slider-view">
-                        <div class="slider-view__picture">
-                          <img src="img/img_zvirata.jpg" alt="">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slider__item swiper-slide">
-                      <div class="slider-view">
-                        <div class="slider-view__picture">
-                          <img src="img/img_produkty.jpg" alt="">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="slider__item swiper-slide">
-                      <div class="slider-view">
-                        <div class="slider-view__picture">
-                          <img src="img/img_pary.jpg" alt="">
-                        </div>
-                      </div>
+                      <div class="swiper-pagination"></div>
                     </div>
                   </div>
-                  <div class="swiper-pagination"></div> <!-- puntíky -->
-                  <div class="swiper-button-prev"></div> <!-- šipka vlevo -->
-                  <div class="swiper-button-next"></div> <!-- šipka vpravo -->
                 </div>
-              </div>
+            </div>
         </section>
         <section class="section">
             <h2 class="section__heading section__heading--without-gap heading">Ahoj, já jsem Natálie!</h2>
@@ -215,138 +204,144 @@
         </section>
         <section class="section section--beige-medium">
             <h2 class="section__heading heading heading--decorative">Co o mně řekli klienti?</h2>
-            <div class="article-container">
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_anna-novotna.jpg" alt="Portrét Anny Novotné">
-                        <div>
-                            <p class="review-box__heading heading">Anna Novotná</p>
-                            <div class="review-box__rating">
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-filled.svg" alt="5">
+            <div class="wrapper">
+                <div class="container">
+                  <div class="inner">
+                    <div class="swiper-container swiper-container2">
+                      <div class="swiper-wrapper">
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_anna-novotna.jpg" alt="Portrét Anny Novotné">
+                                <div>
+                                    <p class="review-box__heading heading">Anna Novotná</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-filled.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="review-box__text">Drahá Natálko, chtěla bych Vám poděkovat za skvělé fotografie našich milovaných kočiček. Byla jsem nadšená Vaším profesionálním přístupem a způsobem, jakým jste se o ně postarala. Natálka nám pořídila nezapomenutelné fotografie, které jsou klenotem našeho domova. Její profesionální přístup, trpělivost a cit pro detail se na každé fotografii projevuje a my jsme rádi, že jsme měli tu čest spolupracovat s tak vynikající fotografkou. Ještě jednou děkuji za Vaši práci a budu Vás rozhodně doporučovat dál 🥰🐈</p>
-                </article>
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_marcela-voborilova.jpg" alt="Portrét Marcely Vobořilové">
-                        <div>
-                            <p class="review-box__heading heading">Marcela Vobořilová</p>
-                            <div class="review-box__rating">
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-filled.svg" alt="5">
+                            <p class="review-box__text">Drahá Natálko, chtěla bych Vám poděkovat za skvělé fotografie našich milovaných kočiček. Byla jsem nadšená Vaším profesionálním přístupem a způsobem, jakým jste se o ně postarala. Natálka nám pořídila nezapomenutelné fotografie, které jsou klenotem našeho domova. Její profesionální přístup, trpělivost a cit pro detail se na každé fotografii projevuje a my jsme rádi, že jsme měli tu čest spolupracovat s tak vynikající fotografkou. Ještě jednou děkuji za Vaši práci a budu Vás rozhodně doporučovat dál 🥰🐈</p>
+                        </article>
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_marcela-voborilova.jpg" alt="Portrét Marcely Vobořilové">
+                                <div>
+                                    <p class="review-box__heading heading">Marcela Vobořilová</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-filled.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="review-box__text">Focení s Naty bylo neuvěřitelně radostné a zábavné! Navštívili jsme její nový ateliér a byli jsme ohromeni jeho krásným designem a vynikajícími zákoutími pro focení. Atmosféra byla velmi přátelská a uvolněná, což nám umožnilo být přirození a vychutnat si celý proces. A co se týče výsledných fotografií, nemohli jsme být spokojenější! Naty má skvělé oko pro detaily a dokáže zachytit naši osobnost a přirozenost v každé záběru. Její práce je opravdu v topu a nemohli jsme být šťastnější s výsledky 🙏 Můžeme Naty jenom vřele doporučit každému, kdo hledá kvalitního a profesionálního fotografa, který dokáže zachytit ty nejlepší momenty. Je to radost spolupracovat s ní a těšíme se na další příležitost, kdy se s ní budeme moci znovu setkat! ❤️</p>
-                </article>
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_katerina-krasna.jpg" alt="Portrét Kateřiny Krásné">
-                        <div>
-                            <p class="review-box__heading heading">Kateřina Krásná</p>
-                            <div class="review-box__rating">
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-filled.svg" alt="5">
+                            <p class="review-box__text">Focení s Naty bylo neuvěřitelně radostné a zábavné! Navštívili jsme její nový ateliér a byli jsme ohromeni jeho krásným designem a vynikajícími zákoutími pro focení. Atmosféra byla velmi přátelská a uvolněná, což nám umožnilo být přirození a vychutnat si celý proces. A co se týče výsledných fotografií, nemohli jsme být spokojenější! Naty má skvělé oko pro detaily a dokáže zachytit naši osobnost a přirozenost v každé záběru. Její práce je opravdu v topu a nemohli jsme být šťastnější s výsledky 🙏 Můžeme Naty jenom vřele doporučit každému, kdo hledá kvalitního a profesionálního fotografa, který dokáže zachytit ty nejlepší momenty. Je to radost spolupracovat s ní a těšíme se na další příležitost, kdy se s ní budeme moci znovu setkat! ❤️</p>
+                        </article>
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_katerina-krasna.jpg" alt="Portrét Kateřiny Krásné">
+                                <div>
+                                    <p class="review-box__heading heading">Kateřina Krásná</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-filled.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="review-box__text">Fotokurz s Natálií byl úžasný! Natálie byla velmi trpělivá a ochotná nám vysvětlit různé techniky a triky. Navíc jsme se naučili pracovat s novým vybavením, což bylo skvělé. Velmi doporučuji Natálii jako lektorku! Její vášeň pro fotografii a zároveň profesionalita jsou úžasné. Díky ní se mi podařilo zlepšit své schopnosti a posunout se na další úroveň. Určitě se těším na další příležitost, abych mohl s Natálií opět spolupracovat ❤️</p>
-                </article>
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_david-nguyen.jpg" alt="Portrét Davida Nguyena">
-                        <div>
-                            <p class="review-box__heading heading">David Nguyen</p>
-                            <div class="review-box__rating">
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-outline.svg" alt="5">
+                            <p class="review-box__text">Fotokurz s Natálií byl úžasný! Natálie byla velmi trpělivá a ochotná nám vysvětlit různé techniky a triky. Navíc jsme se naučili pracovat s novým vybavením, což bylo skvělé. Velmi doporučuji Natálii jako lektorku! Její vášeň pro fotografii a zároveň profesionalita jsou úžasné. Díky ní se mi podařilo zlepšit své schopnosti a posunout se na další úroveň. Určitě se těším na další příležitost, abych mohl s Natálií opět spolupracovat ❤️</p>
+                        </article>
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_david-nguyen.jpg" alt="Portrét Davida Nguyena">
+                                <div>
+                                    <p class="review-box__heading heading">David Nguyen</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-outline.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="review-box__text">Natálie nám zachytila krásné rodinné fotografie. I když to bylo mírně chaotické a naše děti byly trochu neklidné, Natálie se s nimi dokázala vypořádat a přesvědčit je, aby se podívali do kamery. Byla velmi trpělivá a ochotná nám poradit, jak lépe zvládnout focení s dětmi. Navíc jsme se s ní skvěle bavili a vytvořili jsme si přátelskou atmosféru. Jediné, co bychom mohli vytknout je, že jsme očekávali rychlejší dodání fotek, ale nakonec to stálo za to. Výsledné fotky jsou skvělé a budou nám připomínat tento okamžik navždy. Doporučuji Natálii jako skvělého fotografa, který dokáže zachytit kouzlo rodinných okamžiků.</p>
-                </article>
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_martin-fiala.jpg" alt="Portrét Martina Fialy">
-                        <div>
-                            <p class="review-box__heading heading">Martin Fiala</p>
-                            <div class="review-box__rating">
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-filled.svg" alt="5">
+                            <p class="review-box__text">Natálie nám zachytila krásné rodinné fotografie. I když to bylo mírně chaotické a naše děti byly trochu neklidné, Natálie se s nimi dokázala vypořádat a přesvědčit je, aby se podívali do kamery. Byla velmi trpělivá a ochotná nám poradit, jak lépe zvládnout focení s dětmi. Navíc jsme se s ní skvěle bavili a vytvořili jsme si přátelskou atmosféru. Jediné, co bychom mohli vytknout je, že jsme očekávali rychlejší dodání fotek, ale nakonec to stálo za to. Výsledné fotky jsou skvělé a budou nám připomínat tento okamžik navždy. Doporučuji Natálii jako skvělého fotografa, který dokáže zachytit kouzlo rodinných okamžiků.</p>
+                        </article>
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_martin-fiala.jpg" alt="Portrét Martina Fialy">
+                                <div>
+                                    <p class="review-box__heading heading">Martin Fiala</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-filled.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="review-box__text">Rád bych podělil o mé pozitivní zkušenosti s Natálií, s kterou jsme s kolegy spolupracovali na tvorbě produktových fotografií pro naši firmu Glamour Goods. Ukázala nám svou schopnost zachytit naše produkty v nejlepším světle, a to díky svému profesionálnímu přístupu a pečlivému práci s detaily. Její kreativní nápady a schopnost poradit s výběrem pozadí a osvětlení nám pomohly dosáhnout skvělých výsledků. Díky naší spolupráci s Natálií jsme zaznamenali zlepšení v prodejích a náš brand se díky kvalitním fotografiím stává stále více viditelným na trhu. Rádi bychom vřele doporučili Natálii pro jakoukoli práci s fotografiemi, nejen pro tuproduktovou. Je pro nás ctí spolupracovat s takovým profesionálem jako je Natálie a jsme si jisti, že naše spolupráce bude pokračovat i v budoucnu.</p>
-                </article>
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_eliska-dvorska.jpg" alt="Portrét Elišky Dvorské">
-                        <div>
-                            <p class="review-box__heading heading">Eliška Dvorská</p>
-                            <div class="review-box__rating">
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-filled.svg" alt="5">
+                            <p class="review-box__text">Rád bych podělil o mé pozitivní zkušenosti s Natálií, s kterou jsme s kolegy spolupracovali na tvorbě produktových fotografií pro naši firmu Glamour Goods. Ukázala nám svou schopnost zachytit naše produkty v nejlepším světle, a to díky svému profesionálnímu přístupu a pečlivému práci s detaily. Její kreativní nápady a schopnost poradit s výběrem pozadí a osvětlení nám pomohly dosáhnout skvělých výsledků. Díky naší spolupráci s Natálií jsme zaznamenali zlepšení v prodejích a náš brand se díky kvalitním fotografiím stává stále více viditelným na trhu. Rádi bychom vřele doporučili Natálii pro jakoukoli práci s fotografiemi, nejen pro tuproduktovou. Je pro nás ctí spolupracovat s takovým profesionálem jako je Natálie a jsme si jisti, že naše spolupráce bude pokračovat i v budoucnu.</p>
+                        </article>
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_eliska-dvorska.jpg" alt="Portrét Elišky Dvorské">
+                                <div>
+                                    <p class="review-box__heading heading">Eliška Dvorská</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-filled.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="review-box__text">Jsme naprosto nadšení z našich svatebních fotek, které nám pořídila Natálie. Její profesionalita a zároveň lidský přístup nám umožnil zapomenout na stres a plně se soustředit na jeden z nejdůležitějších dnů v našem životě. Natálie byla velmi trpělivá a ochotná nám vysvětlit, jak lépe zvládnout focení a jak se postavit do správného úhlu. Výsledné fotky jsou prostě ohromující a dokážou přenést krásu celého dne. Jsme Natálii velmi vděční za to, že nám zachytila ty nejkrásnější okamžiky naší svatby a budeme si je pamatovat navždy. Pokud hledáte kvalitního fotografa na vaši svatbu, rozhodně doporučujeme.</p>
-                </article>
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_frank-chlad.jpg" alt="Portrét Franka Chlada">
-                        <div>
-                            <p class="review-box__heading heading">Frank Chlad</p>
-                            <div class="review-box__rating">
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-filled.svg" alt="5">
+                            <p class="review-box__text">Jsme naprosto nadšení z našich svatebních fotek, které nám pořídila Natálie. Její profesionalita a zároveň lidský přístup nám umožnil zapomenout na stres a plně se soustředit na jeden z nejdůležitějších dnů v našem životě. Natálie byla velmi trpělivá a ochotná nám vysvětlit, jak lépe zvládnout focení a jak se postavit do správného úhlu. Výsledné fotky jsou prostě ohromující a dokážou přenést krásu celého dne. Jsme Natálii velmi vděční za to, že nám zachytila ty nejkrásnější okamžiky naší svatby a budeme si je pamatovat navždy. Pokud hledáte kvalitního fotografa na vaši svatbu, rozhodně doporučujeme.</p>
+                        </article>
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_frank-chlad.jpg" alt="Portrét Franka Chlada">
+                                <div>
+                                    <p class="review-box__heading heading">Frank Chlad</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-filled.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <p class="review-box__text">Musím říct, že focení s Natálií bylo naprosto super! I když jsem byl na začátku trochu nervózní, Natálie mi pomohla uvolnit se před kamerou. Byla velmi profesionální a uměla mi poradit s pózováním. Navíc jsme si skvěle popovídali a přišli jsme na mnoho společných témat. Výsledné fotky jsou fantastické a nejlepší z nich budou určitě zdobit stěnu mé kanceláře. Natálii mohu jenom doporučit!</p>
-                </article>
-                <article class="review-container">
-                    <div class="review-box">
-                        <img class="review-box__picture" src="./img/img_vaclav-novak.jpg" alt="Portrét Václava Nováka">
-                        <div>
-                            <p class="review-box__heading heading">Václav Novák</p>
-                            <div class="review-box__rating">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.01159 6.01425L6.02209 6.00395L6.03197 5.99305C6.94586 4.985 7.73051 3.72606 8.21004 2.34429C8.71302 3.74136 9.53935 5.03229 10.4648 5.99804C11.2841 6.90304 12.2789 7.55737 13.3923 7.96512C12.2789 8.37286 11.2841 9.02719 10.4648 9.9322C9.53833 10.899 8.74903 12.1517 8.25049 13.5148C7.77432 12.1133 6.96808 10.8266 6.02225 9.84128L6.017 9.83581L6.01159 9.83051C5.12421 8.96045 4.10947 8.31788 2.95506 7.92238C4.10947 7.52687 5.12421 6.8843 6.01159 6.01425Z" stroke="black"/>
-                                </svg>
-                                <img src="icons/icon_star-filled.svg" alt="1">
-                                <img src="icons/icon_star-filled.svg" alt="2">
-                                <img src="icons/icon_star-filled.svg" alt="3">
-                                <img src="icons/icon_star-filled.svg" alt="4">
-                                <img src="icons/icon_star-filled.svg" alt="5">
+                            <p class="review-box__text">Musím říct, že focení s Natálií bylo naprosto super! I když jsem byl na začátku trochu nervózní, Natálie mi pomohla uvolnit se před kamerou. Byla velmi profesionální a uměla mi poradit s pózováním. Navíc jsme si skvěle popovídali a přišli jsme na mnoho společných témat. Výsledné fotky jsou fantastické a nejlepší z nich budou určitě zdobit stěnu mé kanceláře. Natálii mohu jenom doporučit!</p>
+                        </article>
+                        <article class="swiper-slide review-container">
+                            <div class="review-box">
+                                <img class="review-box__picture" src="./img/img_vaclav-novak.jpg" alt="Portrét Václava Nováka">
+                                <div>
+                                    <p class="review-box__heading heading">Václav Novák</p>
+                                    <div class="review-box__rating">
+                                        <img src="icons/icon_star-filled.svg" alt="1">
+                                        <img src="icons/icon_star-filled.svg" alt="2">
+                                        <img src="icons/icon_star-filled.svg" alt="3">
+                                        <img src="icons/icon_star-filled.svg" alt="4">
+                                        <img src="icons/icon_star-filled.svg" alt="5">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <p class="review-box__text">Fotografie od Natálie se mi moc líbí, jsou naprosto fantastické! Je evidentní, že  má velký talent a dokáže zachytit neuvěřitelnou atmosféru a emoce v každé záběru. Její schopnost pracovat s barvami a světlem je skvělá a díky tomu jsou fotky nádherně živé a plné detailů 😊 Navštívil jsem také fotokurz, který Natálie poskytla, a byl jsem velmi příjemně překvapen. Natálie je také vynikající učitelka, která dokáže předat své znalosti a zkušenosti způsobem, který je snadno srozumitelný pro každého. Měl jsem možnost se naučit mnoho užitečných technik a triků, které mi pomohou vylepšit mé vlastní fotografické schopnosti. Celkově musím říci, že Natálie je nejen vynikající fotografka, ale také skvělá učitelka, která dokáže svou lásku k fotografii přenést na své studenty. Velmi doporučuji její fotokurzy a věřím, že každý, kdo se jich zúčastní, bude nadšený stejně jako já!</p>
+                        </article>
+                      </div>
+                      <div class="swiper-pagination"></div>
                     </div>
-                    <p class="review-box__text">Fotografie od Natálie se mi moc líbí, jsou naprosto fantastické! Je evidentní, že  má velký talent a dokáže zachytit neuvěřitelnou atmosféru a emoce v každé záběru. Její schopnost pracovat s barvami a světlem je skvělá a díky tomu jsou fotky nádherně živé a plné detailů 😊 Navštívil jsem také fotokurz, který Natálie poskytla, a byl jsem velmi příjemně překvapen. Natálie je také vynikající učitelka, která dokáže předat své znalosti a zkušenosti způsobem, který je snadno srozumitelný pro každého. Měl jsem možnost se naučit mnoho užitečných technik a triků, které mi pomohou vylepšit mé vlastní fotografické schopnosti. Celkově musím říci, že Natálie je nejen vynikající fotografka, ale také skvělá učitelka, která dokáže svou lásku k fotografii přenést na své studenty. Velmi doporučuji její fotokurzy a věřím, že každý, kdo se jich zúčastní, bude nadšený stejně jako já!</p>
-                </article>
+                  </div>
+                </div>
             </div>
             <div class="button-box">
                 <a class="button-box__text" href="#">Napiš recenzi</a>
