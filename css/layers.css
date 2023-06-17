@@ -100,3 +100,27 @@
     }
 }
 
+@media screen and (min-width: 960px) {
+    .footer-box__text {
+        margin-inline: -1rem;
+    }
+
+    .swiper-container--aspect-ratio {
+        padding-bottom: calc(4/9 * (100% - 32px));
+    }
+
+    .swiper--full-width {
+        margin-inline: 8rem;
+    }
+}
+
+@media (pointer: coarse) {
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+
+    .swiper {;
+        margin: 2rem 0 0;
+    }
+  }
