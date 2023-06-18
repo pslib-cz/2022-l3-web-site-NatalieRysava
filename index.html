@@ -402,5 +402,42 @@
         </div>
     </footer>
     <script src="JS/hamburger.js"></script>
+    <script>
+                // Funkce pro aktualizaci nejvyššího počtu řádků a min-height
+                function updateMaxLines() {
+        // Získání všech elementů s třídou ".review-box__text"
+        const textElements = document.getElementsByClassName("review-box__text");
+
+        // Procházení všech elementů ".review-box__text" a zjištění nejvyššího počtu řádků
+        let maxLines = 0;
+        for (let i = 0; i < textElements.length; i++) {
+            const textElement = textElements[i];
+
+            // Získání aktuálního počtu řádků pomocí clientHeight a výšky jednoho řádku
+            const currentLines = Math.round(textElement.clientHeight / parseFloat(getComputedStyle(textElement).lineHeight));
+
+            // Aktualizace hodnoty nejvyššího počtu řádků
+            if (currentLines > maxLines) {
+            maxLines = currentLines;
+            }
+        }
+
+        // Nastavení min-height pro všechny elementy ".review-box__text" na základě nejvyššího počtu řádků
+        for (let i = 0; i < textElements.length; i++) {
+            const textElement = textElements[i];
+
+            // Výpočet výšky na základě nejvyššího počtu řádků a výšky jednoho řádku (1.2rem)
+            const minHeight = maxLines * 1.2 + "rem";
+
+            // Nastavení min-height
+            textElement.style.minHeight = minHeight;
+        }
+        }
+
+        // Přidání událostního posluchače pro změnu velikosti okna
+        window.addEventListener("resize", updateMaxLines);
+        window.addEventListener("DOMContentLoaded", updateMaxLines);
+        window.addEventListener("load", updateMaxLines);
+    </script>
 </body>
 </html>
