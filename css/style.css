@@ -487,6 +487,7 @@ body{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    height: auto;
 }
 
 .swiper-slide > a {
@@ -542,6 +543,7 @@ body{
     flex-shrink: 0;
     text-align: left;
     display: block;
+    flex-grow: 1;
 }
 
 .review-box {
