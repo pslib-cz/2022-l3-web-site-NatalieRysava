@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/layers.css">
+    <link rel="preload" as="image" href="./img/img_preset-soft-glow-2x.jpg">
+    <link rel="preload" as="image" href="./img/img_preset-mono-bw-2x.jpg">
+    <link rel="preload" as="image" href="./img/img_preset-moody-tones-2x.jpg">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             let slideIndex = 0;
@@ -32,52 +35,54 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-            var swiper1 = new Swiper('.mySwiper1', {
-                autoplay: {
-                delay: 10000,
-                disableOnInteraction: true,
-                },
-                speed: 500,
-                loop: false,
-                slidesPerView: 2,
-                centeredSlides: true,
-                spaceBetween: 32,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                },
-                breakpoints: {
-                    960: {
-                        slidesPerView: 3,
-                        spaceBetween: 40,
-                    },
-                }
-            });
-            var swiper2 = new Swiper('.mySwiper2', {
-                autoplay: {
-                delay: 10000,
-                disableOnInteraction: true,
-                },
-                speed: 500,
-                loop: false,
-                slidesPerView: 1,
-                centeredSlides: true,
-                spaceBetween: 32,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev"
-                }
-            });
+          var swiper1 = new Swiper('.mySwiper1', {
+            speed: 500,
+            loop: false,
+            slidesPerView: 2,
+            centeredSlides: true,
+            spaceBetween: 10,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next-1",
+              prevEl: ".swiper-button-prev-1",
+            },
+            breakpoints: {
+              960: {
+                slidesPerView: 3,
+              },
+            }
+          });
+      
+          var swiper2 = new Swiper('.mySwiper2', {
+            speed: 500,
+            loop: false,
+            slidesPerView: 1,
+            centeredSlides: true,
+            spaceBetween: 10,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next-2",
+              prevEl: ".swiper-button-prev-2",
+            }
+          });
+
+        // Posunutí na druhý slide u swiper1
+        swiper1.slideTo(1);
+        swiper1.navigation.update();
+
+        // Posunutí na druhý slide u swiper2
+        swiper2.slideTo(1);
+        swiper2.navigation.update();
+        
         });
-    </script>
+      </script>
+      
     <title>Úvod</title>
 </head>
 <body>
@@ -119,7 +124,7 @@
         </nav>
     </header>
     <main class="main">
-        <section class="section section--beige-medium section--full-width">
+        <section class="section section--beige-medium section--full-size">
             <div class="slideshow-container">
                     <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-plesy.png" alt="První úvodní fotografie - fotografie skupinky přátel tancujících na plesu">
                     <img class="mySlides fade picture picture--aspect-ratio" src="img/img_main-portrety.jpg" alt="Druhá úvodní fotografie - portrét ženy">
@@ -155,10 +160,10 @@
                 <div class="picture-box__background"></div>
             </div>
         </section>
-        <section class="section section--beige-dark section--full-width">
+        <section class="section section--beige-dark section--position-relative section--full-width">
             <h2 class="section__heading heading heading--hidden">Portfolio</h2>
             <div class="swiper swiper--full-width">
-                <div class="swiper-container swiper-container--aspect-ratio">
+                <div class="swiper-container">
                   <div class="swiper-container__inner">
                     <div class="mySwiper1">
                       <div class="swiper-wrapper">
@@ -182,12 +187,12 @@
                         </div>
                       </div>
                       <div class="swiper-pagination"></div>
-                      <div class="swiper-button-prev"></div>
-                      <div class="swiper-button-next"></div>
                     </div>
                   </div>
                 </div>
             </div>
+            <div class="swiper-button-prev swiper-button-prev-1 swiper-button--plus-8"></div>
+            <div class="swiper-button-next swiper-button-next-1 swiper-button--plus-8"></div>
         </section>
         <section class="section">
             <h2 class="section__heading section__heading--without-gap heading">Ahoj, já jsem Natálie!</h2>
@@ -214,10 +219,9 @@
                 <a class="button-box__text button-box__text--white" href="#">Prozkoumej více</a>
             </div>
         </section>
-        <section class="section section--beige-medium">
+        <section class="section section--position-relative section--beige-medium">
             <h2 class="section__heading heading heading--decorative">Co o mně řekli klienti?</h2>
-            <div class="swiper">
-                <div class="swiper-container mySwiper2">
+            <div class="swiper mySwiper2">                
                     <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <article class="review-container">
@@ -345,30 +349,29 @@
                                         <p class="review-box__text">Musím říct, že focení s Natálií bylo naprosto super! I když jsem byl na začátku trochu nervózní, Natálie mi pomohla uvolnit se před kamerou. Byla velmi profesionální a uměla mi poradit s pózováním. Navíc jsme si skvěle popovídali a přišli jsme na mnoho společných témat. Výsledné fotky jsou fantastické a nejlepší z nich budou určitě zdobit stěnu mé kanceláře. Natálii mohu jenom doporučit!</p>
                                     </article>
                                 </div>
-                        <div class="swiper-slide">
-                            <article class="review-container">
-                                <div class="review-box">
-                                    <img class="review-box__picture" src="./img/img_vaclav-novak.jpg" alt="Portrét Václava Nováka">
-                                    <div>
-                                        <p class="review-box__heading heading">Václav Novák</p>
-                                        <div class="review-box__rating">
-                                            <img src="icons/icon_star-filled.svg" alt="1">
-                                            <img src="icons/icon_star-filled.svg" alt="2">
-                                            <img src="icons/icon_star-filled.svg" alt="3">
-                                            <img src="icons/icon_star-filled.svg" alt="4">
-                                            <img src="icons/icon_star-filled.svg" alt="5">
+                            <div class="swiper-slide">
+                                <article class="review-container">
+                                    <div class="review-box">
+                                        <img class="review-box__picture" src="./img/img_vaclav-novak.jpg" alt="Portrét Václava Nováka">
+                                        <div>
+                                            <p class="review-box__heading heading">Václav Novák</p>
+                                            <div class="review-box__rating">
+                                                <img src="icons/icon_star-filled.svg" alt="1">
+                                                <img src="icons/icon_star-filled.svg" alt="2">
+                                                <img src="icons/icon_star-filled.svg" alt="3">
+                                                <img src="icons/icon_star-filled.svg" alt="4">
+                                                <img src="icons/icon_star-filled.svg" alt="5">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <p class="review-box__text">Fotografie od Natálie se mi moc líbí, jsou naprosto fantastické! Je evidentní, že  má velký talent a dokáže zachytit neuvěřitelnou atmosféru a emoce v každé záběru. Její schopnost pracovat s barvami a světlem je skvělá a díky tomu jsou fotky nádherně živé a plné detailů 😊 Navštívil jsem také fotokurz, který Natálie poskytla, a byl jsem velmi příjemně překvapen. Natálie je také vynikající učitelka, která dokáže předat své znalosti a zkušenosti způsobem, který je snadno srozumitelný pro každého. Měl jsem možnost se naučit mnoho užitečných technik a triků, které mi pomohou vylepšit mé vlastní fotografické schopnosti. Celkově musím říci, že Natálie je nejen vynikající fotografka, ale také skvělá učitelka, která dokáže svou lásku k fotografii přenést na své studenty. Velmi doporučuji její fotokurzy a věřím, že každý, kdo se jich zúčastní, bude nadšený stejně jako já!</p>
-                            </article>
-                        </div>
+                                    <p class="review-box__text">Fotografie od Natálie se mi moc líbí, jsou naprosto fantastické! Je evidentní, že  má velký talent a dokáže zachytit neuvěřitelnou atmosféru a emoce v každé záběru. Její schopnost pracovat s barvami a světlem je skvělá a díky tomu jsou fotky nádherně živé a plné detailů 😊 Navštívil jsem také fotokurz, který Natálie poskytla, a byl jsem velmi příjemně překvapen. Natálie je také vynikající učitelka, která dokáže předat své znalosti a zkušenosti způsobem, který je snadno srozumitelný pro každého. Měl jsem možnost se naučit mnoho užitečných technik a triků, které mi pomohou vylepšit mé vlastní fotografické schopnosti. Celkově musím říci, že Natálie je nejen vynikající fotografka, ale také skvělá učitelka, která dokáže svou lásku k fotografii přenést na své studenty. Velmi doporučuji její fotokurzy a věřím, že každý, kdo se jich zúčastní, bude nadšený stejně jako já!</p>
+                                </article>
+                            </div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
+                <div class="swiper-pagination"></div>               
             </div>
+            <div class="swiper-button-prev swiper-button-prev-2 swiper-button--minus-4"></div>
+            <div class="swiper-button-next swiper-button-next-2 swiper-button--minus-4"></div> 
             <div class="button-box">
                 <a class="button-box__text" href="#">Napiš recenzi</a>
             </div>
@@ -387,14 +390,16 @@
                 <a class="icon-box__icon--facebook" href="https://www.facebook.com/naty.pattynew"><span class="text text--hidden">Facebook</span></a>
             </div>
         </div>
-        <div class="footer-box">
-            <p class="footer-box__text text text--normal">©&nbsp;Copyright&nbsp;2023 -&nbsp;Natálie Ryšavá Photography</p>
-            <div>
-                <a class="footer-box__link" href="#">Cookies</a>
-                <a class="footer-box__link" href="#">Podmínky užití</a>
+        <div class="footer-container">
+            <div class="footer-box">
+                <p class="footer-box__text footer-box__text--star text text--normal">©&nbsp;Copyright&nbsp;2023 -&nbsp;Natálie Ryšavá Photography</p>
+                <div>
+                    <a class="footer-box__link footer-box__link--star" href="#">Cookies</a>
+                    <a class="footer-box__link" href="#">Podmínky užití</a>
+                </div>
             </div>
+            <a class="footer-box__link footer-box__link--maker" href="#">Vytvořila: Natálie Ryšavá</a>
         </div>
-        <a class="footer-box__link footer-box__link--maker" href="#">Vytvořila: Natálie Ryšavá</a>
     </footer>
     <script src="JS/hamburger.js"></script>
 </body>
