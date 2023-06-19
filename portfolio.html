@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/icon_shortcut.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layers.css">
+    <title>Portfolio</title>
+</head>
+<body>
+	<header class="main-header">
+        <nav class="navbar">
+            <div class="navbar__items navbar__items--bottom"> 
+                <p><a class="navbar__logo" href="index.html"><span class="h1-seo">Natálie Ryšavá Photography</span></a></p>       
+                    <div class="navbar__hamburger">
+                        <a class="hamburger-menu" href="javascript:void(0)">
+                            <span class="hamburger-menu__line"></span>
+                            <span class="hamburger-menu__line"></span>
+                            <span class="hamburger-menu__line"></span>
+                        </a>
+                    </div>
+					<menu class="navbar__menu hamburger-menu-list navbar__menu--hidden">
+						<li class="navbar__menu-item">
+							<a class="navbar__menu-link navbar__menu-link--light" href="index.html">Úvod</a>
+						</li>
+						<li class="navbar__menu-item">
+							<a class="navbar__menu-link navbar__menu-link--light" href="#">O mně</a>
+						</li>
+						<li class="navbar__menu-item">
+							<a class="navbar__menu-link navbar__menu-link--light " href="portfolio.html">Portfolio</a>
+						</li>
+						<li class="navbar__menu-item">
+							<a class="navbar__menu-link navbar__menu-link--light" href="#">Ceník</a>
+						</li>
+						<li class="navbar__menu-item">
+							<a class="navbar__menu-link navbar__menu-link--light" href="#">Kurzy</a>
+						</li>
+						<li class="navbar__menu-item">
+							<a class="navbar__menu-link navbar__menu-link--light" href="#">Presety</a>
+						</li>
+						<li class="navbar__menu-item">
+							<a class="navbar__menu-link navbar__menu-link--light" href="#">Kontakt</a>
+						</li>
+					</menu>
+            </div>
+        </nav>
+    </header>
+	<h1 class="section__heading heading heading--left">Portfolio</h1>
+	<main class="portfolio-list">
+		<li><a href="#"></a>Plesy</li>
+		<li><a href="portfolio-portrety.html">Portréty</a></li>
+		<li><a href="#"></a>Svatby</li>
+		<li><a href="#"></a>Zvířata</li>
+		<li><a href="#"></a>Produkty</li>
+		<li><a href="#"></a>Páry</li>
+	</main>
+	<script type="text/javascript">
+		lightGallery(
+			document.querySelector(".thumbnails"), {
+			plugins: [lgZoom, lgThumbnail, lgAutoplay],
+			speed: 500,
+			selector: ".thumbnail > a"
+		});
+	</script>
+    <script src="JS/hamburger.js"></script>
+</body>
+</html>

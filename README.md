@@ -13,8 +13,8 @@ Nezapomenu upravit odkazy a "aktivovat" GitHub Pages...
 - [X] Aktivovat GitHub Pages
 - [X] Upravit README.md (aktualizace odkazů na Figmu a Web)
 - [X] Hamburger menu (s JS)
-- [ ] Implementována [LightGallery](https://github.com/sachinchoolur/lightGallery)
-- [ ] Implementován [Swiper](https://swiperjs.com/) nebo [Glide](https://glidejs.com/)
+- [X] Implementována [LightGallery](https://github.com/sachinchoolur/lightGallery)
+- [X] Implementován [Swiper](https://swiperjs.com/) nebo [Glide](https://glidejs.com/)
 - [ ] ...desatero
 - [ ] Zcela funkční při vw 360px
 - [ ] Zcela funkční při vw 2560px
