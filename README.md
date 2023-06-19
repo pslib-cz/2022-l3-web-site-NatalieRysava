@@ -3,7 +3,6 @@
 Práce se zabývá vytvořením (fiktivních) webových stránek fotografky Natálie Ryšavé...
 
 Stránka není dokončená - bude později.
-
 [Webová stránka s ukázkovou implemetací](https://pslib-cz.github.io/2022-l3-web-site-NatalieRysava/)
 
 [Návrh webové stránky ve Figmě](https://www.figma.com/file/4gh0PUDAik0gjxW8gAGEm6/Untitled?type=design&node-id=0%3A1&t=yras6dPKNmCVAQuA-1)
