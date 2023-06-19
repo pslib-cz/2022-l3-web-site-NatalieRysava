@@ -42,48 +42,16 @@
     font-weight: var(--font-weight-bold);
 }
 
-@media screen and (min-width: 1100px) {  
-    .navbar__logo{
-        background-image: url(../logos/logo_main.svg);
-        background-repeat: no-repeat;
-        background-origin: content-box;
-        width: 360px;
-        height: 116.48px;
-    }
-    
-    .navbar__logo:hover {
-        background-image: url(../logos/logo_main-hover.svg);
+
+@media screen and (max-width: 380px) {
+    .footer-box__text {
+        margin-inline: -1rem;
     }
 }
 
-@media screen and (min-width: 768px) {
-    .navbar__menu--hidden {
-        opacity: 1;
-        pointer-events: auto;
-        user-select: auto;
-    }
-
-    .navbar__menu-link--light:hover {
-        font-weight: var(--font-weight-light);
-
-    }
-
-    .navbar__menu-link:hover::before {
-        width: calc(100% - 2rem);
-        transition: width 0.5s ease;
-    }
-
-    .navbar__menu-link::before {
-        position: absolute;
-        content: "";
-        width: 0%;
-        height: 4px;
-        left: 1rem;
-        bottom: -.5rem;
-        background-image: url(../icons/icon_menu-border.svg);
-        background-repeat-x: repeat;
-        z-index: 10;
-        transition: width 0.5s ease;
+@media screen and (min-width: 450px) {
+    .preset-box {
+        padding-inline: 4rem;
     }
 }
 
@@ -125,9 +93,38 @@
     }
 }
 
-@media screen and (max-width: 380px) {
-    .footer-box__text {
-        margin-inline: -1rem;
+@media screen and (min-width: 768px) {
+    .navbar__menu--hidden {
+        opacity: 1;
+        pointer-events: auto;
+        user-select: auto;
+    }
+
+    .navbar__menu-link--light:hover {
+        font-weight: var(--font-weight-light);
+
+    }
+
+    .navbar__menu-link::before {
+        position: absolute;
+        content: "";
+        width: 0%;
+        height: 4px;
+        left: 1rem;
+        bottom: -.5rem;
+        background-image: url(../icons/icon_menu-border.svg);
+        background-repeat-x: repeat;
+        z-index: 10;
+        transition: width 0.5s ease;
+    }
+
+    .navbar__menu-link:hover::before, .navbar__menu-link--active::before {
+        width: calc(100% - 2rem);
+        transition: width 0.5s ease;
+    }
+
+    .preset-box {
+        gap: 2rem;
     }
 }
 
@@ -154,6 +151,20 @@
 
     .swiper--full-width {
         margin-inline: 8rem;
+    }
+}
+
+@media screen and (min-width: 1100px) {  
+    .navbar__logo{
+        background-image: url(../logos/logo_main.svg);
+        background-repeat: no-repeat;
+        background-origin: content-box;
+        width: 360px;
+        height: 116.48px;
+    }
+    
+    .navbar__logo:hover {
+        background-image: url(../logos/logo_main-hover.svg);
     }
 }
 

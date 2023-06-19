@@ -79,15 +79,28 @@ html {
     border-radius: 50% 50% 0 0;
 }
 
-.picture-box {
+.beginner-box {
     margin: 2rem 0;
 }
 
-.picture-box__background {
-    background-color: var(--color-sec-gray);
+.beginner-box--background {
+    position: relative;
+}
+
+.beginner-box--background::before {
+    content: "";
+    position: absolute;
+    bottom: -2rem;
+    left: -2rem;
+    width: 100%;
+    padding-inline: 2rem;
     height: 50vw;
-    margin-inline: -2rem;
-    margin-top: calc(-50vw + 2rem);
+    z-index: 0;
+    background-color: var(--color-sec-gray);
+}
+
+.beginner-box__picture {
+    position: relative;
 }
 
 a > .preset-box__picture {
@@ -204,8 +217,13 @@ h1:has(.h1-seo) {
     font-size: calc(.5 * var(--font-size-heading-1));
 }
 
-.autor-box--alignment {
+.autor-container--alignment {
     text-align: center;
+}
+
+figure.autor-box {
+    max-width: 320px;
+    margin: 0 auto;
 }
 
 .autor-box__text {
